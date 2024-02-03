@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fiberocr-web
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+#    volumes:
+#      - ./:/$GOPATH/src/github.com/merdw/fiberocr/
+    command: go run .
